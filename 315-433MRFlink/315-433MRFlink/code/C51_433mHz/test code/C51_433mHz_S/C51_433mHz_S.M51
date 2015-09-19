@@ -1,0 +1,188 @@
+BL51 BANKED LINKER/LOCATER V5.03                                                        08/31/2012  08:45:11  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.03, INVOKED BY:
+E:\KEIL\C51\BIN\BL51.EXE C51_433mHz_S.obj TO C51_433mHz_S
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  C51_433mHz_S.obj (C51_433MHZ_S)
+  E:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  C51_433mHz_S (C51_433MHZ_S)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+                    0008H     0018H                  *** GAP ***
+            BIT     0020H.0   0000H.2   UNIT         _BIT_GROUP_
+                    0020H.2   0000H.6                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     002EH     UNIT         ?PR?MAIN?C51_433MHZ_S
+            CODE    0031H     0024H     UNIT         ?PR?_SEND?C51_433MHZ_S
+            CODE    0055H     001BH     UNIT         ?PR?OUTBIT?C51_433MHZ_S
+            CODE    0070H     0014H     UNIT         ?PR?_PULSE?C51_433MHZ_S
+            CODE    0084H     0012H     UNIT         ?PR?_MDELAY?C51_433MHZ_S
+            CODE    0096H     000CH     UNIT         ?C_C51STARTUP
+            CODE    00A2H     000AH     UNIT         ?PR?_DELAY?C51_433MHZ_S
+
+
+
+OVERLAY MAP OF MODULE:   C51_433mHz_S (C51_433MHZ_S)
+
+
+SEGMENT                             BIT_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH
+------------------------------------------------
+?C_C51STARTUP                    -----    -----
+  +--> ?PR?MAIN?C51_433MHZ_S
+
+?PR?MAIN?C51_433MHZ_S            -----    -----
+  +--> ?PR?_MDELAY?C51_433MHZ_S
+  +--> ?PR?_SEND?C51_433MHZ_S
+
+?PR?_SEND?C51_433MHZ_S           0020H.0  0000H.1
+  +--> ?PR?_PULSE?C51_433MHZ_S
+  +--> ?PR?_DELAY?C51_433MHZ_S
+  +--> ?PR?OUTBIT?C51_433MHZ_S
+
+?PR?OUTBIT?C51_433MHZ_S          0020H.1  0000H.1
+  +--> ?PR?_PULSE?C51_433MHZ_S
+  +--> ?PR?_DELAY?C51_433MHZ_S
+BL51 BANKED LINKER/LOCATER V5.03                                                      08/31/2012  08:45:11  PAGE 2
+
+
+
+
+
+SYMBOL TABLE OF MODULE:  C51_433mHz_S (C51_433MHZ_S)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        C51_433MHZ_S
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  C:0031H         PUBLIC        _send
+  C:0055H         PUBLIC        outbit
+  C:0003H         PUBLIC        main
+  C:0084H         PUBLIC        _mDelay
+  C:00A2H         PUBLIC        _Delay
+  B:0090H.0       PUBLIC        out
+  C:0070H         PUBLIC        _Pulse
+  -------         PROC          _MDELAY
+  D:0007H         SYMBOL        ms
+  -------         DO            
+  D:0006H         SYMBOL        i
+  -------         ENDDO         
+  C:0084H         LINE#         14
+  C:0084H         LINE#         15
+  C:0084H         LINE#         17
+  C:008AH         LINE#         18
+  C:008AH         LINE#         19
+  C:0095H         LINE#         20
+  C:0095H         LINE#         21
+  -------         ENDPROC       _MDELAY
+  -------         PROC          _DELAY
+  D:0007H         SYMBOL        in_data
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:00A2H         LINE#         24
+  C:00A2H         LINE#         25
+  C:00A2H         LINE#         27
+  C:00ABH         LINE#         28
+  -------         ENDPROC       _DELAY
+  -------         PROC          _PULSE
+  D:0007H         SYMBOL        in_data
+  -------         DO            
+  D:0007H         SYMBOL        i
+  D:0006H         SYMBOL        j
+  -------         ENDDO         
+  C:0070H         LINE#         29
+  C:0070H         LINE#         30
+  C:0070H         LINE#         32
+  C:0072H         LINE#         33
+  C:0078H         LINE#         34
+  C:0078H         LINE#         35
+  C:007AH         LINE#         36
+  C:0080H         LINE#         37
+  C:0083H         LINE#         38
+  -------         ENDPROC       _PULSE
+BL51 BANKED LINKER/LOCATER V5.03                                                      08/31/2012  08:45:11  PAGE 3
+
+
+  -------         PROC          OUTBIT
+  B:0020H.1       SYMBOL        i_bit
+  C:0055H         LINE#         41
+  C:0055H         LINE#         42
+  C:0055H         LINE#         44
+  C:0058H         LINE#         45
+  C:0058H         LINE#         46
+  C:005DH         LINE#         47
+  C:005FH         LINE#         48
+  C:0061H         LINE#         49
+  C:0063H         LINE#         51
+  C:0063H         LINE#         52
+  C:0068H         LINE#         53
+  C:006AH         LINE#         54
+  C:006FH         LINE#         55
+  C:006FH         LINE#         57
+  -------         ENDPROC       OUTBIT
+  -------         PROC          _SEND
+  D:0005H         SYMBOL        in_data
+  -------         DO            
+  D:0003H         SYMBOL        i
+  B:0020H.0       SYMBOL        DI
+  -------         ENDDO         
+  C:0031H         LINE#         59
+  C:0033H         LINE#         60
+  C:0033H         LINE#         64
+  C:0038H         LINE#         65
+  C:003AH         LINE#         66
+  C:003FH         LINE#         67
+  C:0041H         LINE#         68
+  C:0041H         LINE#         69
+  C:0045H         LINE#         70
+  C:004CH         LINE#         71
+  C:0050H         LINE#         72
+  C:0054H         LINE#         73
+  -------         ENDPROC       _SEND
+  -------         PROC          MAIN
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0003H         LINE#         74
+  C:0003H         LINE#         75
+  C:0003H         LINE#         77
+  C:0003H         LINE#         78
+  C:0003H         LINE#         79
+  C:0005H         LINE#         80
+  C:0007H         LINE#         81
+  C:0007H         LINE#         82
+  C:000CH         LINE#         83
+  C:0011H         LINE#         84
+  C:0016H         LINE#         85
+  C:001BH         LINE#         87
+  C:001DH         LINE#         88
+  C:0026H         LINE#         89
+  C:002BH         LINE#         90
+  -------         ENDPROC       MAIN
+BL51 BANKED LINKER/LOCATER V5.03                                                      08/31/2012  08:45:11  PAGE 4
+
+
+  -------         ENDMOD        C51_433MHZ_S
+
+Program Size: data=9.2 xdata=0 code=172
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

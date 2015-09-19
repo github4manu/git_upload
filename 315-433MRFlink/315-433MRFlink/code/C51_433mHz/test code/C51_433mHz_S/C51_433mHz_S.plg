@@ -1,0 +1,21 @@
+<html>
+<body>
+<pre>
+<h1>礦ision2 Build Log</h1>
+<h2>Project:</h2>
+E:\张新兵\程序调试\433mhz\C51_433mHz\C51_433mHz_S\C51_433mHz_S.uv2
+Project File Date:  08/30/2012
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling C51_433mHz_S.c...
+linking...
+Program Size: data=9.2 xdata=0 code=172
+creating hex file from "C51_433mHz_S"...
+"C51_433mHz_S" - 0 Error(s), 0 Warning(s).
+Build target 'Target 1'
+compiling C51_433mHz_S.c...
+linking...
+Program Size: data=9.2 xdata=0 code=172
+creating hex file from "C51_433mHz_S"...
+"C51_433mHz_S" - 0 Error(s), 0 Warning(s).
